@@ -64,7 +64,7 @@ h1{
     color:#fff;
 }
 .FilmInfo{
-    filter:blur(10px);
+    filter: blur(10px);
     left:0;
     top:121px;
     height: 469%;
@@ -73,4 +73,12 @@ h1{
     background-size:100% 100%;
     background: transparent;
     z-index: 98;
+}
+.Info{
+    top: 121px;
+    left:0;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    z-index: 100;
 }

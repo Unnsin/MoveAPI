@@ -22,10 +22,11 @@ Data Release: {{mov.release_date}}" height="250px" width="175px" (click)="showFi
     <button class="Next Btn" (click)="GetPage(NowPage+1, true)">Next</button>
     <button class="Finish Btn" (click) = "GetEnd()">Finish</button>
 </div>
-<div class="FilmInfo" [ngStyle] = "{'display': drop ? 'block':'none',
+<div class="FilmInfo"  [ngStyle] = "{'display': drop ? 'block':'none',
                                     'background':URLS}">
-    <div class="Info">
+
+</div>
+<div class="Info" [ngStyle] = "{'display': drop ? 'block':'none'}">
         <button (click)="GetList()"> Back to list</button>
         <button>Next</button>
-    </div>
 </div>

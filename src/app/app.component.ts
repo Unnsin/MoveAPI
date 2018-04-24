@@ -33,13 +33,11 @@ export class AppComponent  implements OnInit{
   }
   GetEnd(){
     let len = this.Service.GetLenth();
-    console.log(len);
     this.NowPage = len;
     this.movies = this.Service.GetPage(len-1);
   }
   showFilm(move){
     this.URLS ='url(' + this.BUF + move.poster_path + ')'; 
-    console.log(this.URLS);
     this.drop = !this.drop;
   }
   GetList(){

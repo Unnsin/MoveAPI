@@ -22,7 +22,7 @@ export class DataService {
         }
         },
         error=>{},
-        ()=>{console.log(this.Movies);this.GetPageCol();});
+        ()=>{this.GetPageCol();});
       });
       
   }
@@ -36,7 +36,6 @@ export class DataService {
     for(var i=0;i<col/12;i++){
       this.Page_col.push(i+1);
     }
-    console.log(this.Page_col);
     return this.Page_col;
   }
 
@@ -48,7 +47,7 @@ export class DataService {
         }
         },
         error=>{},
-        ()=>{console.log(this.Movies);this.GetPageCol(); this.Page++;});
+        ()=>{this.GetPageCol(); this.Page++;});
     }
     return this.Movies.slice(numb*12,(numb*12)+12);
   }

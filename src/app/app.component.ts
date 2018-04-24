@@ -34,4 +34,7 @@ export class AppComponent  implements OnInit{
     this.NowPage = len;
     this.movies = this.Service.GetPage(len-1);
   }
+  showFilm(mov){
+    console.log("Clcik " + mov.original_title);
+  }
 }

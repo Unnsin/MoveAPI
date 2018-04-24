@@ -1,9 +1,20 @@
+<header>
+    <h1>Movies</h1> 
+    <div class="menu">
+        <li><a href="#">My Acount</a>
+            <ul class="submenu"> 
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </li>
+    </div>
+</header>
+<div class ="Films">
 <h3 class="title">Latest Releases</h3>
 <div class="Movies" *ngFor="let mov of movies">
      <img src="http://image.tmdb.org/t/p/w342/{{mov.poster_path}}" alt = "Image Not Found"
 title="Title: {{mov.original_title}}
 Rating: {{mov.vote_average}}
-Data Release: {{mov.release_date}}" height="250px" width="175px">
+Data Release: {{mov.release_date}}" height="250px" width="175px" (click)="showFilm(mov)">
 </div>
 <div class="Pager">
     <button class="Start Btn" (click) = "GetStart()">Start</button>
@@ -12,4 +23,4 @@ Data Release: {{mov.release_date}}" height="250px" width="175px">
     <button class="Next Btn" (click)="GetPage(NowPage+1, true)">Next</button>
     <button class="Finish Btn" (click) = "GetEnd()">Finish</button>
 </div>
-
+</div>

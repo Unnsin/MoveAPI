@@ -8,10 +8,9 @@
         </li>
     </div>
 </header>
-<div class ="Films">
 <h3 class="title">Latest Releases</h3>
 <div class="Movies" *ngFor="let mov of movies">
-     <img src="http://image.tmdb.org/t/p/w342/{{mov.poster_path}}" alt = "Image Not Found"
+<img src="http://image.tmdb.org/t/p/w342/{{mov.poster_path}}" alt = "Image Not Found"
 title="Title: {{mov.original_title}}
 Rating: {{mov.vote_average}}
 Data Release: {{mov.release_date}}" height="250px" width="175px" (click)="showFilm(mov)">
@@ -23,4 +22,10 @@ Data Release: {{mov.release_date}}" height="250px" width="175px" (click)="showFi
     <button class="Next Btn" (click)="GetPage(NowPage+1, true)">Next</button>
     <button class="Finish Btn" (click) = "GetEnd()">Finish</button>
 </div>
+<div class="FilmInfo" [ngStyle] = "{'display': drop ? 'block':'none',
+                                    'background':URLS}">
+    <div class="Info">
+        <button (click)="GetList()"> Back to list</button>
+        <button>Next</button>
+    </div>
 </div>

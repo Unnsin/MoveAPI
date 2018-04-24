@@ -8,6 +8,9 @@ import { DataService } from './data-service.service';
 })
 export class AppComponent  implements OnInit{
   NowPage:number;
+  drop:boolean = false;
+  BUF = "http://image.tmdb.org/t/p/w342/";
+  URLS = "";
   constructor(public Service: DataService){}
   title = 'app';
   movies = [];
@@ -34,7 +37,12 @@ export class AppComponent  implements OnInit{
     this.NowPage = len;
     this.movies = this.Service.GetPage(len-1);
   }
-  showFilm(mov){
-    console.log("Clcik " + mov.original_title);
+  showFilm(move){
+    this.URLS ='url(' + this.BUF + move.poster_path + ')'; 
+    console.log(this.URLS);
+    this.drop = !this.drop;
+  }
+  GetList(){
+    this.drop = !this.drop;
   }
 }

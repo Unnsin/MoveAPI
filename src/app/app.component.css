@@ -21,6 +21,7 @@
     width: 140px;
 }
 .menu li{
+    
     list-style: none;
     padding-left: 10px;
     padding-bottom: 4px;
@@ -61,4 +62,15 @@ h1{
     top: 30px;
     left:10px;
     color:#fff;
+}
+.FilmInfo{
+    filter:blur(10px);
+    left:0;
+    top:121px;
+    height: 469%;
+    width: 100%;
+    position: absolute ;
+    background-size:100% 100%;
+    background: transparent;
+    z-index: 98;
 }

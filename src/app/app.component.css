@@ -1,0 +1,24 @@
+.Movies{
+    display: inline;
+    margin: 20px;
+    margin-left: 16px;
+}
+img {
+    margin-top: 20px;
+    box-shadow: 6px -2px 3px 0.2px rgba(0, 0, 0, .2);
+}
+.title {
+    margin-left:  22px;
+    color: grey;
+}
+.Pager{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.Btn{
+   padding: 10px;
+}
+.NowPage{
+    opacity: .25;
+}

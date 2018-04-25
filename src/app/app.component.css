@@ -78,7 +78,45 @@ h1{
     top: 121px;
     left:0;
     position: absolute;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     z-index: 100;
+}
+.Info img{
+    position: relative;
+    left: 10%;
+    margin-top: 10%;
+}
+.back{
+    display: inline;
+    float:left;
+}
+.next {
+    display: inline;
+    float: right;
+}
+.TitleFilm{
+    position: absolute;;
+    top:35%;
+    display: inline;
+    color: #fff;
+    left: 44.7%;
+}
+.Info p{
+    left: 12%;
+    display:  inline;
+    color: #fff;
+    font-size: 20px;
+}
+.Info > .data{
+    position: absolute;
+    left: 45%;
+    top: 51%;
+}
+.overview{
+    width: 50%;
+    position: absolute;
+    left:45%;
+    top:61%;
+    color:#fff;
 }

@@ -7,7 +7,15 @@ import { DataService } from './data-service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements OnInit{
+  posterUrl:string;
   NowPage:number;
+  MoveTitle:string;
+  Year:string;
+  Score:number;
+  Fames:number;
+  Data_Release:string;
+  overview:string;
+  NowMovi;
   drop:boolean = false;
   BUF = "http://image.tmdb.org/t/p/w342/";
   URLS = "";
@@ -37,10 +45,26 @@ export class AppComponent  implements OnInit{
     this.movies = this.Service.GetPage(len-1);
   }
   showFilm(move){
+    this.NowMovi = move;
+    this.overview = move.overview;
+    this.Data_Release = move.release_date;
+    this.Score = move.vote_average;
+    this.Year = move.release_date.slice(0,4);
+    this.Fames = move.popularity;
+    this.MoveTitle = move.original_title;
+    this.posterUrl = move.poster_path;
     this.URLS ='url(' + this.BUF + move.poster_path + ')'; 
-    this.drop = !this.drop;
+    this.drop = true;
   }
   GetList(){
-    this.drop = !this.drop;
+    this.drop = false;
+  }
+  GetNext(){
+    let index = this.movies.indexOf(this.NowMovi);
+    if(index!=this.movies.length-1){
+    this.showFilm(this.movies[index+1]);
+    }else{
+      this.GetList();
+    }
   }
 }

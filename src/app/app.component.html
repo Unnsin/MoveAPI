@@ -27,6 +27,22 @@ Data Release: {{mov.release_date}}" height="250px" width="175px" (click)="showFi
 
 </div>
 <div class="Info" [ngStyle] = "{'display': drop ? 'block':'none'}">
-        <button (click)="GetList()"> Back to list</button>
-        <button>Next</button>
+        <button class="back" (click)="GetList()"> Back to list</button>
+        <button class="next" (click)="GetNext()">Next</button>
+        <img src="http://image.tmdb.org/t/p/w342/{{posterUrl}}" alt = "Image Not Found">
+        <h1 class ="TitleFilm">{{MoveTitle}}({{Year}})</h1>
+        <span class="data">
+            <p>
+                Score: {{Score}} |
+            </p>
+            <p>
+                Fames: {{Fames}} |
+            </p>
+            <p>
+                Release Date: {{Data_Release}} 
+            </p> 
+        </span>
+        <div class="overview">
+            {{overview}}
+        </div>
 </div>

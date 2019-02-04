@@ -1,48 +1,62 @@
 <header>
-    <h1>Movies</h1> 
-    <div class="menu">
-        <li><a href="#">My Acount</a>
-            <ul class="submenu"> 
-                <li><a href="#">Log Out</a></li>
-            </ul>
-        </li>
-    </div>
+  <h1>Movies</h1>
+  <div class="menu">
+    <li>
+      <a href="#">My Acount</a>
+      <ul class="submenu">
+        <li><a href="#">Log Out</a></li>
+      </ul>
+    </li>
+  </div>
 </header>
 <h3 class="title">Latest Releases</h3>
 <div class="Movies" *ngFor="let mov of movies">
-<img src="http://image.tmdb.org/t/p/w342/{{mov.poster_path}}" alt = "Image Not Found"
-title="Title: {{mov.original_title}}
-Rating: {{mov.vote_average}}
-Data Release: {{mov.release_date}}" height="250px" width="175px" (click)="showFilm(mov)">
+  <img
+    src="http://image.tmdb.org/t/p/w342/{{ mov.poster_path }}"
+    alt="Image Not Found"
+    title="Title: {{ mov.original_title }}
+Rating: {{ mov.vote_average }}
+Data Release: {{ mov.release_date }}"
+    height="250px"
+    width="175px"
+    (click)="showFilm(mov)"
+  />
 </div>
 <div class="Pager">
-    <button class="Start Btn" (click) = "GetStart()">Start</button>
-    <button class="Prev Btn" (click)="GetPage(NowPage-1, false)">Pred</button>
-    <button class="NowPage Btn">{{NowPage}}</button>
-    <button class="Next Btn" (click)="GetPage(NowPage+1, true)">Next</button>
-    <button class="Finish Btn" (click) = "GetEnd()">Finish</button>
+  <button class="Btn" mat-button (click)="GetStart()">
+    Start
+  </button>
+  <button class="Btn" mat-button (click)="GetPage(NowPage - 1, false)">
+    Pred
+  </button>
+  <button class="NowPage Btn">{{ NowPage }}</button>
+  <button class="Btn" mat-button (click)="GetPage(NowPage + 1, true)">
+    Next
+  </button>
+  <button class="Btn" mat-button color="primary" (click)="GetEnd()">
+    Finish
+  </button>
 </div>
-<div class="FilmInfo"  [ngStyle] = "{'display': drop ? 'block':'none',
-                                    'background':URLS}">
-
-</div>
-<div class="Info" [ngStyle] = "{'display': drop ? 'block':'none'}">
-        <button class="back" (click)="GetList()"> <i></i> Back to list</button>
-        <button class="next" (click)="GetNext()"> <i></i> Next</button>
-        <img src="http://image.tmdb.org/t/p/w342/{{posterUrl}}" alt = "Image Not Found">
-        <h1 class ="TitleFilm">{{MoveTitle}}({{Year}})</h1>
-        <span class="data">
-            <p>
-                Score: {{Score}} |
-            </p>
-            <p>
-                Fames: {{Fames}} |
-            </p>
-            <p>
-                Release Date: {{Data_Release}} 
-            </p> 
-        </span>
-        <div class="overview">
-            {{overview}}
-        </div>
+<div
+  class="FilmInfo"
+  [ngStyle]="{ display: drop ? 'block' : 'none', background: URLS }"
+></div>
+<div class="Info" [ngStyle]="{ display: drop ? 'block' : 'none' }">
+  <button class="back" mat-button (click)="GetList()">Back to list</button>
+  <button class="next" mat-button (click)="GetNext()">
+    Next
+  </button>
+  <img
+    src="http://image.tmdb.org/t/p/w342/{{ posterUrl }}"
+    alt="Image Not Found"
+  />
+  <h1 class="TitleFilm">{{ MoveTitle }}({{ Year }})</h1>
+  <span class="data">
+    <p>Score: {{ Score }} |</p>
+    <p>Fames: {{ Fames }} |</p>
+    <p>Release Date: {{ Data_Release }}</p>
+  </span>
+  <div class="overview">
+    {{ overview }}
+  </div>
 </div>
